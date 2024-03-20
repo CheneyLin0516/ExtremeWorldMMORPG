@@ -103,6 +103,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Entities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Character.cs" />
+    <Compile Include="Entities\CharacterBase.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Monster.cs" />
     <Compile Include="GameServer.cs" />
     <Compile Include="Network\ExtensionMethods.cs" />
     <Compile Include="Network\NetConnection.cs" />
@@ -149,7 +153,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
     <Folder Include="Managers\" />
     <Folder Include="Models\" />
   </ItemGroup>
