@@ -114,11 +114,10 @@ message NetMessageRequest{
 	UserCreateCharacterRequest createChar = 3;
 	UserGameEnterRequest gameEnter = 4;
 	UserGameLeaveRequest gameLeave = 5;
-	
 	MapCharacterEnterRequest mapCharacterEnter = 6;
-
 	MapEntitySyncRequest mapEntitySync = 8;
 	MapTeleportRequest mapTeleport = 9;
+	FirstTestRequest firstRequest = 10;
 }
 
 message NetMessageResponse{
@@ -135,6 +134,9 @@ message NetMessageResponse{
 	
 }
 
+message FirstTestRequest {
+	string helloworld = 1;
+}
 
 // User Protocol
 message UserLoginRequest {
