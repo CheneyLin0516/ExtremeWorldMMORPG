@@ -23,7 +23,7 @@ namespace GameServer
         {
             network = new NetService();
             network.Init(8000);
-
+            HelloWorldService.Instance.Init();//初始化
             // DBService.Instance.Init();
             //var a = DBService.Instance.Enities.Characters.Where(s => s.TID ==1);
             //Console.WriteLine("{0}",a.FirstOrDefault<TCharacter>().Name);
@@ -33,6 +33,7 @@ namespace GameServer
 
         public void Start()
         {
+            HelloWorldService.Instance.Start();//服务器来启动新加的协议，启动过后消息开始订阅
             network.Start();
             running = true;
             thread.Start();
