@@ -977,6 +977,7 @@ GameObject:
   - component: {fileID: 526364206}
   - component: {fileID: 526364205}
   - component: {fileID: 526364207}
+  - component: {fileID: 526364208}
   m_Layer: 5
   m_Name: LoginPanel
   m_TagString: Untagged
@@ -1053,6 +1054,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c8bb62ce5ce3754abb525b5d8f1f5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &526364208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526364203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66114bc20795e474b838eacd141a7f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   username: {fileID: 753956147}
@@ -1887,7 +1899,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 526364207}
+      - m_Target: {fileID: 526364208}
         m_MethodName: OnClickLogin
         m_Mode: 1
         m_Arguments:
@@ -2312,6 +2324,7 @@ GameObject:
   - component: {fileID: 1023949126}
   - component: {fileID: 1023949125}
   - component: {fileID: 1023949127}
+  - component: {fileID: 1023949128}
   m_Layer: 5
   m_Name: RegisterPanel
   m_TagString: Untagged
@@ -2392,11 +2405,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4aef486f5cdd341a5d47a259991708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1023949128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1023949123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0c1b4f0fb93f0488fbe66960adf72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   username: {fileID: 130788688}
   password: {fileID: 2113746043}
   passwordConfirm: {fileID: 1549924174}
   buttonRegister: {fileID: 1540120570}
-  uiLogin: {fileID: 526364203}
+  uiLogin: {fileID: 500191202}
 --- !u!1 &1165042393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,7 +2975,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1023949127}
+      - m_Target: {fileID: 1023949128}
         m_MethodName: OnClickRegister
         m_Mode: 1
         m_Arguments:

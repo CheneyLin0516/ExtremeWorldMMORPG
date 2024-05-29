@@ -37,4 +37,6 @@ public class UICharacterView : MonoBehaviour {
             characters[i].SetActive(i == this.currentCharacter);//如果 i 等于 currentCharacter，表达式结果为 true；否则为 false。
         }
     }
+    //在角色选择视图中，我们不仅需要显示当前选中的角色，还需要确保其他角色被隐藏。
+    //虽然点击选择一个角色，但为了更新所有角色的显示状态，仍然需要遍历所有角色。
 }

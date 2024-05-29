@@ -17,6 +17,7 @@ namespace GameServer.Services
         {
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<UserLoginRequest>(this.OnLogin);
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<UserRegisterRequest>(this.OnRegister);
+			MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<UserCreateCharacterRequest>(this.OnCreateCharacter);
             //使用 MessageDistributer 的单例实例。
             //订阅 UserRegisterRequest 类型的消息。
             //当接收到 UserRegisterRequest 消息时，调用当前类中的 OnRegister 方法来处理该消息。
@@ -77,9 +78,10 @@ namespace GameServer.Services
                     message.Response.userLogin.Userinfo.Player.Characters.Add(info);
                 }
 
-                byte[] data = PackageHandler.PackMessage(message);
-                sender.SendData(data, 0, data.Length);
+                
             }
+			byte[] data = PackageHandler.PackMessage(message);
+            sender.SendData(data, 0, data.Length);
 
         }
 
@@ -119,22 +121,28 @@ namespace GameServer.Services
         {
             Log.InfoFormat("UserCreateCharacterRequest: Name:{0}  Class:{1}", request.Name, request.Class);
 
+            //接收到请求，创建表格，T开头代表EF框架使用的entity这种映射的对象，自定义的
+
             TCharacter character = new TCharacter()
             {
+                //把请求写进去
                 Name = request.Name,
                 Class = (int)request.Class,
-                TID = (int)request.Class,
+                TID = (int)request.Class,//为了给其他地方用，暂时冗余
+
+                //第一次出现要出现在哪，地图中的哪个点？
                 MapID = 1,
                 MapPosX = 5000,
                 MapPosY = 4000,
                 MapPosZ = 820,
             };
 
-
+            //写入数据库
             DBService.Instance.Entities.Characters.Add(character);
-            sender.Session.User.Player.Characters.Add(character);
+            sender.Session.User.Player.Characters.Add(character);//session是内存中的角色对象，已有角色再创建新角色时不用重新拉DB表格
             DBService.Instance.Entities.SaveChanges();
 
+            //操作完数据库再处理回发消息
             NetMessage message = new NetMessage();
             message.Response = new NetMessageResponse();
             message.Response.createChar = new UserCreateCharacterResponse();
@@ -142,7 +150,7 @@ namespace GameServer.Services
             message.Response.createChar.Errormsg = "None";
 
             byte[] data = PackageHandler.PackMessage(message);
-            sender.SendData(data, 0, data.Length);
+            sender.SendData(data, 0, data.Length);//sender就是客户端的session，用session来管理发送的每个人是谁
         }
 
     }
