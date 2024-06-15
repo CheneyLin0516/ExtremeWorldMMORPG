@@ -7,6 +7,7 @@ using Network;
 using UnityEngine;
 
 using SkillBridge.Message;
+using Models;
 
 namespace Services
 {
@@ -15,6 +16,8 @@ namespace Services
                                                             //在 UserService 类中，实现 IDisposable 接口，可以确保在不再需要 UserService 实例时，正确地释放相关资源（如网络连接、事件订阅等）。
     {
 
+
+        //创建UI层的事件，给UI使用
         public UnityEngine.Events.UnityAction<Result, string> OnRegister; //这是一个委托，如果没有任何方法附加到 OnRegister，它的值就是 null。
         public UnityEngine.Events.UnityAction<Result, string> OnLogin; //允许将OnLogin方法附加到事件并在事件触发时调用这些方法
         public UnityEngine.Events.UnityAction<Result, string> OnCharacterCreate;
@@ -23,6 +26,9 @@ namespace Services
 
         bool connected = false;
 
+
+        //Service层来处理对UI层事件的订阅
+        //userservice负责处理所有和用户相关的网络通讯
         public UserService()
         {
             NetClient.Instance.OnConnect += OnGameServerConnect; //订阅连接消息
@@ -31,6 +37,10 @@ namespace Services
             MessageDistributer.Instance.Subscribe<UserLoginResponse>(this.OnUserLogin);
             MessageDistributer.Instance.Subscribe<UserRegisterResponse>(this.OnUserRegister);
             MessageDistributer.Instance.Subscribe<UserCreateCharacterResponse>(this.OnUserCreateCharacter);
+            MessageDistributer.Instance.Subscribe<UserGameEnterResponse>(this.OnGameEnter);
+           // MessageDistributer.Instance.Subscribe<UserGameLeaveResponse>(this.OnGameLeave);
+            MessageDistributer.Instance.Subscribe<MapCharacterEnterResponse>(this.OnCharacterEnter);
+
 
             // += 操作符：用于订阅基于委托的事件，当事件触发时，调用附加到该事件的处理程序。
             //Subscribe 方法：用于订阅特定类型的消息，通过消息分发器分发消息并调用相应的处理程序。
@@ -41,6 +51,8 @@ namespace Services
             MessageDistributer.Instance.Unsubscribe<UserLoginResponse>(this.OnUserLogin);
             MessageDistributer.Instance.Unsubscribe<UserRegisterResponse>(this.OnUserRegister);
             MessageDistributer.Instance.Unsubscribe<UserCreateCharacterResponse>(this.OnUserCreateCharacter);
+            MessageDistributer.Instance.Subscribe<UserGameEnterResponse>(this.OnGameEnter);
+         //   MessageDistributer.Instance.Subscribe<UserGameLeaveResponse>(this.OnGameLeave);
             NetClient.Instance.OnConnect -= OnGameServerConnect;
             NetClient.Instance.OnDisconnect -= OnGameServerDisconnect;
         }
@@ -232,6 +244,50 @@ namespace Services
         }
         //接收完消息后要在UserService方法里注册来订阅消息和取消
 
+        public void SendGameEnter(int characterIdx)//发送进入游戏的请求，需要知道当前选择的哪个角色，所以发送角色索引idx
+                                                    //因为登录的时候，服务器会有一个角色列表填充给客户端，所以客户端的角色顺序和服务器是一致的
+                                                    //所以只用一个id，服务器就能根据一个正确的对应关系找个该角色
+        {
+            Debug.LogFormat("UserGameEnterRequest::characterId:{0}", characterIdx);
+            NetMessage message = new NetMessage();
+            message.Request = new NetMessageRequest();
+            message.Request.gameEnter = new UserGameEnterRequest();
+            message.Request.gameEnter.characterIdx = characterIdx;
+            NetClient.Instance.SendMessage(message);
+        }
+
+        public void OnGameEnter(object sender, UserGameEnterResponse response)
+        {
+            Debug.LogFormat("OnGameEnter:{0} [{1}]", response.Result, response.Errormsg);
+
+            if (response.Result == Result.Success)
+            {
+
+            }
+        }
+
+        public void SendGameLeave()
+        {
+            Debug.Log("UserGameLeaveRequest");
+            NetMessage message = new NetMessage();
+            message.Request = new NetMessageRequest();
+            message.Request.gameLeave = new UserGameLeaveRequest();
+            NetClient.Instance.SendMessage(message);
+        }
+
+        void OnGameLeave(object sender, UserGameEnterResponse response)
+        {
+            //MapService.Instance.CurrentMapId = 0;
+            Debug.LogFormat("OnGameLeave: {0} [{1}]", response.Result, response.Errormsg);
+        }
+
+        private void OnCharacterEnter(object sender, MapCharacterEnterResponse message)
+        {
+            Debug.LogFormat("OnMapCharacterEnter: {0}", message.mapId);
+            NCharacterInfo info = message.Characters[0];
+            User.Instance.CurrentCharacter = info;
+            SceneManager.Instance.LoadScene(DataManager.Instance.Maps[message.mapId].Resource);
+        }
     }
 }
 

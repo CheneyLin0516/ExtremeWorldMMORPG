@@ -6,7 +6,8 @@ using Models;
 using Services;
 using SkillBridge.Message;
 
-public class UICharacterSelect : MonoBehaviour {
+public class UICharacterSelect : MonoBehaviour
+{
 
     public GameObject panelCreate;
     public GameObject panelSelect;
@@ -31,24 +32,25 @@ public class UICharacterSelect : MonoBehaviour {
 
     public UICharacterView characterView;
 
-    void Start ()
+    void Start()
     {
         DataManager.Instance.Load();//网络未连接的时候使用
-        
+
         InitCharacterSelect(true);
         UserService.Instance.OnCharacterCreate = OnCharacterCreate;//订阅从Userservice处来的消息，并且执行“角色创建成功与否的方法”
-	}
-	
+    }
+
     public void InitCharacterCreate()
     {
         panelCreate.SetActive(true);
         panelSelect.SetActive(false);
         OnSelectClass(1);
     }
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void OnClickCreate()
     {
@@ -73,10 +75,10 @@ public class UICharacterSelect : MonoBehaviour {
             names[i].text = DataManager.Instance.Characters[i + 1].Name;//在登录的时候做的预加载，所以本地的时候需要加载datamanager
         }
 
-       descs.text = DataManager.Instance.Characters[charClass].Description;
+        descs.text = DataManager.Instance.Characters[charClass].Description;
     }
 
-    void OnCharacterCreate (Result result, string message)//根据逻辑层的消息，执行“角色创建成功与否的方法”
+    void OnCharacterCreate(Result result, string message)//根据逻辑层的消息，执行“角色创建成功与否的方法”
     {
         if (result == Result.Success)
         {
@@ -94,13 +96,13 @@ public class UICharacterSelect : MonoBehaviour {
 
         if (init)
         {
-            foreach(var old in uiChars)//var 是 C# 中的一个关键字，用于在局部变量声明时让编译器自动推断变量的类型。在这里是GameObject
+            foreach (var old in uiChars)//var 是 C# 中的一个关键字，用于在局部变量声明时让编译器自动推断变量的类型。在这里是GameObject
             {
                 Destroy(old);
             }
             uiChars.Clear();
 
-         for (int i = 0; i <User.Instance.Info.Player.Characters.Count; i++)
+            for (int i = 0; i < User.Instance.Info.Player.Characters.Count; i++)
             {
                 GameObject go = Instantiate(uiCharInfo, this.uiCharList);//角色选择面板uiCharList滚动区
                 UICharInfo chrInfo = go.GetComponent<UICharInfo>();
@@ -119,7 +121,7 @@ public class UICharacterSelect : MonoBehaviour {
         }
     }
 
-     public void OnSelectCharacter(int idx)
+    public void OnSelectCharacter(int idx)
     {
         this.selectCharacterIdx = idx;
         var cha = User.Instance.Info.Player.Characters[idx];
@@ -135,12 +137,13 @@ public class UICharacterSelect : MonoBehaviour {
     }
 
 
-     public void OnClickPlay()
+    public void OnClickPlay()
     {
         if (selectCharacterIdx >= 0)
         {
-            MessageBox.Show("进入游戏", "进入游戏", MessageBoxType.Confirm);
-            // UserService.Instance.SendGameEnter(selectCharacterIdx);
+           //MessageBox.Show("进入游戏", "进入游戏", MessageBoxType.Confirm);
+           UserService.Instance.SendGameEnter(selectCharacterIdx);
         }
     }
+
 }

@@ -976,7 +976,6 @@ GameObject:
   - component: {fileID: 526364204}
   - component: {fileID: 526364206}
   - component: {fileID: 526364205}
-  - component: {fileID: 526364207}
   - component: {fileID: 526364208}
   m_Layer: 5
   m_Name: LoginPanel
@@ -1045,17 +1044,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 526364203}
   m_CullTransparentMesh: 0
---- !u!114 &526364207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 526364203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c8bb62ce5ce3754abb525b5d8f1f5e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &526364208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,7 +2311,6 @@ GameObject:
   - component: {fileID: 1023949124}
   - component: {fileID: 1023949126}
   - component: {fileID: 1023949125}
-  - component: {fileID: 1023949127}
   - component: {fileID: 1023949128}
   m_Layer: 5
   m_Name: RegisterPanel
@@ -2394,17 +2381,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1023949123}
   m_CullTransparentMesh: 0
---- !u!114 &1023949127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1023949123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c4aef486f5cdd341a5d47a259991708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1023949128
 MonoBehaviour:
   m_ObjectHideFlags: 0

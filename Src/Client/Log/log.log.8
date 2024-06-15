@@ -1,75 +1,24 @@
-2024-05-28 23:43:02,284 [ 1] INFO  Unity: LoadingManager start
-2024-05-28 23:43:11,276 [ 1] INFO  Unity: UserLoginRequest::user :user123 psw:1234
-2024-05-28 23:43:11,277 [ 1] INFO  Unity: ConnectToServer() Start 
-2024-05-28 23:43:11,283 [ 1] INFO  Unity: DoConnect
-2024-05-28 23:43:11,284 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2024-05-28 23:43:11,285 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+2024-06-15 18:15:10,704 [ 1] INFO  Unity: LoadingManager start
+2024-06-15 18:15:13,882 [ 1] INFO  Unity: DataManager > DataManager()
+2024-06-15 18:15:13,969 [ 1] FATAL Unity: <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>{0
+{1}</format><args>{FormatException: Input string was not in the correct format, System.Int32.Parse (System.String s, NumberStyles style, IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Int32.cs:640)
+System.Int32.Parse (System.String s, IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Int32.cs:208)
+System.Convert.ToInt32 (System.String value, IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Convert.cs:1277)
+System.String.System.IConvertible.ToInt32 (IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/String.cs:2391)
+System.Convert.ToType (System.Object value, System.Type conversionType, IFormatProvider provider, Boolean try_target_to_type) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Convert.cs:2910)
+System.Convert.ChangeType (System.Object value, System.Type conversionType, IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Convert.cs:2511)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType (Newtonsoft.Json.JsonReader reader, System.Object value, System.Globalization.CultureInfo culture, Newtonsoft.Json.Serialization.JsonContract contract, System.Type targetType)
+Rethrow as JsonSerializationException: Error converting value "ID" to type 'System.Int32'. Path '1.ID', line 3, position 9.
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType (Newtonsoft.Json.JsonReader reader, System.Object value, System.Globalization.CultureInfo culture, Newtonsoft.Json.Serialization.JsonContract contract, System.Type targetType)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary (IDictionary dictionary, Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonDictionaryContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id)
+Rethrow as JsonSerializationException: Could not convert string 'ID' to dictionary key type 'System.Int32'. Create a TypeConverter to convert from the string to the key type object. Path '1.ID', line 3, position 9.
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary (IDictionary dictionary, Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonDictionaryContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id)
+}</args></log4net.Error>
+2024-06-15 18:15:36,236 [ 1] WARN  Unity: Unable to open C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Standalone/UnityEngine.UI.dll: Check external application preferences.
 
-2024-05-28 23:43:13,329 [ 1] WARN  Unity: CloseConnection(), errorCode: 1005
-UnityEngine.Debug:LogWarning(Object)
-Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
-Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:274)
-Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
-Services.UserService:ConnectToServer() (at Assets/Scripts/Services/UserService.cs:58)
-Services.UserService:SendLogin(String, String) (at Assets/Scripts/Services/UserService.cs:144)
-UILogin:OnClickLogin() (at Assets/Scripts/UI/UILogin.cs:39)
-UnityEngine.EventSystems.EventSystem:Update()
-
-2024-05-28 23:43:13,338 [ 1] ERROR Unity: DoConnect SocketException:[10061,ConnectionRefused,10061]System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
-
-  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
-  at System.Net.Sockets.Socket+Worker.Connect () [0x00000] in <filename unknown>:0  
-UnityEngine.Debug:LogErrorFormat(String, Object[])
-Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:276)
-Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
-Services.UserService:ConnectToServer() (at Assets/Scripts/Services/UserService.cs:58)
-Services.UserService:SendLogin(String, String) (at Assets/Scripts/Services/UserService.cs:144)
-UILogin:OnClickLogin() (at Assets/Scripts/UI/UILogin.cs:39)
-UnityEngine.EventSystems.EventSystem:Update()
-
-2024-05-28 23:43:13,340 [ 1] INFO  Unity: DoConnect
-2024-05-28 23:43:13,341 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2024-05-28 23:43:13,342 [ 1] INFO  Unity: Connect[1] to server 127.0.0.1:8000
-
-2024-05-28 23:43:15,388 [ 1] WARN  Unity: CloseConnection(), errorCode: 1005
-UnityEngine.Debug:LogWarning(Object)
-Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
-Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:274)
-Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
-Network.NetClient:KeepConnect() (at Assets/Scripts/Network/NetClient.cs:315)
-Network.NetClient:Update() (at Assets/Scripts/Network/NetClient.cs:432)
-
-2024-05-28 23:43:15,389 [ 1] ERROR Unity: DoConnect SocketException:[10061,ConnectionRefused,10061]System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
-
-  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
-  at System.Net.Sockets.Socket+Worker.Connect () [0x00000] in <filename unknown>:0  
-UnityEngine.Debug:LogErrorFormat(String, Object[])
-Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:276)
-Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
-Network.NetClient:KeepConnect() (at Assets/Scripts/Network/NetClient.cs:315)
-Network.NetClient:Update() (at Assets/Scripts/Network/NetClient.cs:432)
-
-2024-05-28 23:43:27,911 [ 1] INFO  Unity: OnDestroy NetworkManager.
-2024-05-28 23:43:27,912 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+2024-06-15 18:15:39,206 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2024-06-15 18:15:39,206 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
-
-2024-05-28 23:43:27,927 [ 1] ERROR Unity: Some objects were not cleaned up when closing the scene. (Did you spawn new GameObjects from OnDestroy?)
-The following scene GameObjects were found:
-IconE
-UIMessageBox(Clone)
-Text
-ButtonOK
-Panel
-IconI
-IconQ
-Text
-Icons
-Message
-TitleBar
-Buttons
-Title
-ButtonCancel
-
 
