@@ -980,7 +980,11 @@ GameObject:
   - component: {fileID: 526364208}
 =======
   - component: {fileID: 526364207}
+<<<<<<< HEAD
 >>>>>>> parent of 498d36e (Version 1.2.6)
+=======
+  - component: {fileID: 526364208}
+>>>>>>> parent of c840d88 (Version1.2.5)
   m_Layer: 5
   m_Name: LoginPanel
   m_TagString: Untagged
@@ -1067,10 +1071,21 @@ MonoBehaviour:
 >>>>>>> parent of 498d36e (Version 1.2.6)
   m_Name: 
   m_EditorClassIdentifier: 
-  username: {fileID: 753956147}
-  password: {fileID: 1787861181}
-  buttonLogin: {fileID: 812818413}
-  buttonRegister: {fileID: 1625773838}
+--- !u!114 &526364208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526364203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66114bc20795e474b838eacd141a7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  username: {fileID: 0}
+  password: {fileID: 0}
+  buttonLogin: {fileID: 0}
+  buttonRegister: {fileID: 0}
 --- !u!1 &582322191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,8 +1400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -68}
-  m_SizeDelta: {x: 417, y: 394}
+  m_AnchoredPosition: {x: -16, y: 0.000015259}
+  m_SizeDelta: {x: 720, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &676594431
 MonoBehaviour:
@@ -2167,7 +2182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &980382075
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2327,7 +2342,11 @@ GameObject:
   - component: {fileID: 1023949128}
 =======
   - component: {fileID: 1023949127}
+<<<<<<< HEAD
 >>>>>>> parent of 498d36e (Version 1.2.6)
+=======
+  - component: {fileID: 1023949128}
+>>>>>>> parent of c840d88 (Version1.2.5)
   m_Layer: 5
   m_Name: RegisterPanel
   m_TagString: Untagged
@@ -2416,11 +2435,21 @@ MonoBehaviour:
 >>>>>>> parent of 498d36e (Version 1.2.6)
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1023949128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1023949123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0c1b4f0fb93f0488fbe66960adf72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   username: {fileID: 130788688}
   password: {fileID: 2113746043}
   passwordConfirm: {fileID: 1549924174}
   buttonRegister: {fileID: 1540120570}
-  uiLogin: {fileID: 526364203}
 --- !u!1 &1165042393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,7 +3004,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1023949127}
+      - m_Target: {fileID: 1023949128}
         m_MethodName: OnClickRegister
         m_Mode: 1
         m_Arguments:
@@ -3975,7 +4004,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0836ec844dd66ad42a89fea9bd7eaaa7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 789c8338547b5cc4b90522c58bf7bd56, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

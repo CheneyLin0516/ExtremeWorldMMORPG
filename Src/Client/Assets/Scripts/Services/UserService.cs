@@ -11,16 +11,18 @@ using Models;
 
 namespace Services
 {
-    class UserService : Singleton<UserService>, IDisposable //Singleton<T>单例模式，统一管理网络连接、消息分发等资源，避免重复创建和销毁这些资源。
-                                                            //通过Instance 属性，任何地方都可以方便地访问这个唯一的 UserService 实例，而不需要显式地创建或传递实例。
-                                                            //在 UserService 类中，实现 IDisposable 接口，可以确保在不再需要 UserService 实例时，正确地释放相关资源（如网络连接、事件订阅等）。
+    class UserService : Singleton<UserService>, IDisposable
     {
 
+<<<<<<< HEAD
 
         //创建UI层的事件，给UI使用
         public UnityEngine.Events.UnityAction<Result, string> OnRegister; //这是一个委托，如果没有任何方法附加到 OnRegister，它的值就是 null。
         public UnityEngine.Events.UnityAction<Result, string> OnLogin; //允许将OnLogin方法附加到事件并在事件触发时调用这些方法
         public UnityEngine.Events.UnityAction<Result, string> OnCharacterCreate;
+=======
+        public UnityEngine.Events.UnityAction<Result, string> OnRegister;
+>>>>>>> parent of c840d88 (Version1.2.5)
 
         NetMessage pendingMessage = null;
 
@@ -31,28 +33,32 @@ namespace Services
         //userservice负责处理所有和用户相关的网络通讯
         public UserService()
         {
-            NetClient.Instance.OnConnect += OnGameServerConnect; //订阅连接消息
+            NetClient.Instance.OnConnect += OnGameServerConnect;
             NetClient.Instance.OnDisconnect += OnGameServerDisconnect;
 
-            MessageDistributer.Instance.Subscribe<UserLoginResponse>(this.OnUserLogin);
             MessageDistributer.Instance.Subscribe<UserRegisterResponse>(this.OnUserRegister);
+<<<<<<< HEAD
             MessageDistributer.Instance.Subscribe<UserCreateCharacterResponse>(this.OnUserCreateCharacter);
             MessageDistributer.Instance.Subscribe<UserGameEnterResponse>(this.OnGameEnter);
            // MessageDistributer.Instance.Subscribe<UserGameLeaveResponse>(this.OnGameLeave);
             MessageDistributer.Instance.Subscribe<MapCharacterEnterResponse>(this.OnCharacterEnter);
 
+=======
+>>>>>>> parent of c840d88 (Version1.2.5)
 
-            // += 操作符：用于订阅基于委托的事件，当事件触发时，调用附加到该事件的处理程序。
-            //Subscribe 方法：用于订阅特定类型的消息，通过消息分发器分发消息并调用相应的处理程序。
+
         }
 
-        public void Dispose()//用于取消订阅之前订阅的消息和事件
+        public void Dispose()
         {
-            MessageDistributer.Instance.Unsubscribe<UserLoginResponse>(this.OnUserLogin);
+
             MessageDistributer.Instance.Unsubscribe<UserRegisterResponse>(this.OnUserRegister);
+<<<<<<< HEAD
             MessageDistributer.Instance.Unsubscribe<UserCreateCharacterResponse>(this.OnUserCreateCharacter);
             MessageDistributer.Instance.Subscribe<UserGameEnterResponse>(this.OnGameEnter);
          //   MessageDistributer.Instance.Subscribe<UserGameLeaveResponse>(this.OnGameLeave);
+=======
+>>>>>>> parent of c840d88 (Version1.2.5)
             NetClient.Instance.OnConnect -= OnGameServerConnect;
             NetClient.Instance.OnDisconnect -= OnGameServerDisconnect;
         }
@@ -85,10 +91,9 @@ namespace Services
             }
             else
             {
-                if (!this.DisconnectNotify(result, reason)) //表示逻辑非操作符。如果 DisconnectNotify 返回 false，逻辑非操作符会将其结果变为 true，因此 if 语句中的代码块会执行。
+                if (!this.DisconnectNotify(result, reason))
                 {
                     MessageBox.Show(string.Format("网络错误，无法连接到服务器！\n RESULT:{0} ERROR:{1}", result, reason), "错误", MessageBoxType.Error);
-                  
                 }
             }
         }
@@ -99,51 +104,32 @@ namespace Services
             return;
         }
 
-        bool DisconnectNotify(int result, string reason)//返回值是true 和false
-                                                        //true：表示存在挂起的消息，并且已经处理了断开连接的通知。
-                                                        //false：表示没有挂起的消息，因此没有处理断开连接的通知。
+        bool DisconnectNotify(int result, string reason)
         {
-            //Step 1:检查是否有挂起的消息：
             if (this.pendingMessage != null)
             {
-                //Step 2:检查挂起的消息是否是登录请求：
-                if (this.pendingMessage.Request.userLogin != null)
+                if (this.pendingMessage.Request.userRegister != null)
                 {
-                    //Step 3: 触发登录失败事件处理程序
-                    if (this.OnLogin != null)
-                    {
-                        this.OnLogin(Result.Failed, string.Format("服务器断开！\n RESULT:{0} ERROR:{1}", result, reason));
-                    }
-                }
-                // Step 4: 检查是否是挂起的注册请求
-                else if (this.pendingMessage.Request.userRegister != null)
-                {
-                    //Step 5: 触发注册失败事件处理程序
-                    if (this.OnRegister != null) //在调用委托之前，通常需要检查它是否为 null，以防止运行时错误：
+                    if (this.OnRegister != null)
                     {
                         this.OnRegister(Result.Failed, string.Format("服务器断开！\n RESULT:{0} ERROR:{1}", result, reason));
                     }
                 }
-                else
-                {
-                    if(this.OnCharacterCreate != null)
-                    {
-                        this.OnCharacterCreate(Result.Failed, string.Format("服务器断开！\n RESULT:{0} ERROR:{1}", result, reason));
-                    }
-                }
-                return true;// Step 6: 返回 true 表示处理了挂起的消息，跳出if
+                return true;
             }
-            return false;// Step 7: 返回 false 表示没有挂起的消息
+            return false;
         }
 
-        public void SendLogin(string user, string psw)
+
+
+        public void SendRegister(string user, string psw)
         {
-            Debug.LogFormat("UserLoginRequest::user :{0} psw:{1}", user, psw);
+            Debug.LogFormat("UserRegisterRequest::user :{0} psw:{1}", user, psw);
             NetMessage message = new NetMessage();
             message.Request = new NetMessageRequest();
-            message.Request.userLogin = new UserLoginRequest();
-            message.Request.userLogin.User = user;
-            message.Request.userLogin.Passward = psw;
+            message.Request.userRegister = new UserRegisterRequest();
+            message.Request.userRegister.User = user;
+            message.Request.userRegister.Passward = psw;
 
             if (this.connected && NetClient.Instance.Connected)
             {
@@ -157,55 +143,17 @@ namespace Services
             }
         }
 
-        //把用户登录成功的消息发送给关注的人，在这里是OnLogin需要关注
-        void OnUserLogin(object sender, UserLoginResponse response)//object sender是一个在 C# 事件处理程序中表示触发事件的对象。比如点击确认按钮
-        {
-            Debug.LogFormat("OnUserLogin:{0} [{1}]", response.Result, response.Errormsg);
-
-            if(response.Result == Result.Success)
-            {
-                Models.User.Instance.SetupUserInfo(response.Userinfo);
-            }
-
-            if (this.OnLogin != null)
-            {
-                this.OnLogin(response.Result, response.Errormsg);
-            }
-        }
-        
-
-        public void SendRegister(string user, string psw)
-        {
-            Debug.LogFormat("UserRegisterRequest::user :{0} psw:{1}", user, psw);
-            NetMessage message = new NetMessage();  //通过创建 NetMessageRequest 和 UserRegisterRequest 两个实例，可以构建一个完整的用户注册请求消息，并将其封装在 NetMessage 对象中进行传输。
-            message.Request = new NetMessageRequest();
-            message.Request.userRegister = new UserRegisterRequest();//有很多请求，需要单独创建用户的注册请求
-            message.Request.userRegister.User = user;
-            message.Request.userRegister.Passward = psw;
-
-            if (this.connected && NetClient.Instance.Connected)//逻辑层connected和物理层netclient都认为连接已建立时才发送消息
-                                                               //逻辑层状态管理可以防止在物理层连接频繁波动时导致的重复操作。
-                                                                //例如，避免在网络短暂中断后重复初始化某些资源或重新发送某些消息。
-            {
-                this.pendingMessage = null;
-                NetClient.Instance.SendMessage(message);
-            }
-            else
-            {
-                this.pendingMessage = message;
-                this.ConnectToServer();
-            }
-        }
-
-        void OnUserRegister(object sender, UserRegisterResponse response) //当服务器返回用户注册的响应时，这个方法会被调用，并根据响应结果执行相应的逻辑。
+        void OnUserRegister(object sender, UserRegisterResponse response)
         {
             Debug.LogFormat("OnUserRegister:{0} [{1}]", response.Result, response.Errormsg);
 
             if (this.OnRegister != null)
             {
                 this.OnRegister(response.Result, response.Errormsg);
+
             }
         }
+<<<<<<< HEAD
 
         public void SendCharacterCreate(string name, CharacterClass cls)
         {
@@ -288,6 +236,8 @@ namespace Services
             User.Instance.CurrentCharacter = info;
             SceneManager.Instance.LoadScene(DataManager.Instance.Maps[message.mapId].Resource);
         }
+=======
+>>>>>>> parent of c840d88 (Version1.2.5)
     }
 }
 
