@@ -1,122 +1,128 @@
-2024-05-29 00:10:12,941 [ 1] INFO  Unity: LoadingManager start
-2024-05-29 00:10:28,033 [ 1] INFO  Unity: UserLoginRequest::user :user123 psw:1234
-2024-05-29 00:10:28,034 [ 1] INFO  Unity: ConnectToServer() Start 
-2024-05-29 00:10:28,035 [ 1] INFO  Unity: DoConnect
-2024-05-29 00:10:28,036 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2024-05-29 00:10:28,037 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+2024-06-15 21:27:03,033 [ 1] INFO  Unity: LoadingManager start
+2024-06-15 21:27:11,451 [ 1] INFO  Unity: UserLoginRequest::user :user123 psw:1234
+2024-06-15 21:27:11,452 [ 1] INFO  Unity: ConnectToServer() Start 
+2024-06-15 21:27:11,453 [ 1] INFO  Unity: DoConnect
+2024-06-15 21:27:11,454 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2024-06-15 21:27:11,455 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
 
-2024-05-29 00:10:28,040 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
-2024-05-29 00:10:31,248 [ 1] INFO  Unity: OnLogin:Success [None]
-2024-05-29 00:10:31,251 [ 1] INFO  Unity: LoadLevel: CharSelect
-2024-05-29 00:10:31,323 [ 1] INFO  Unity: LevelLoadCompleted:1
-2024-05-29 00:10:31,324 [ 1] INFO  Unity: DataManager > DataManager()
-2024-05-29 00:10:31,375 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
+2024-06-15 21:27:11,457 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
+2024-06-15 21:27:13,042 [ 1] INFO  Unity: OnLogin:Success [None]
+2024-06-15 21:27:13,043 [ 1] INFO  Unity: LoadLevel: CharSelect
+2024-06-15 21:27:13,134 [ 1] INFO  Unity: LevelLoadCompleted:1
+2024-06-15 21:27:13,136 [ 1] INFO  Unity: DataManager > DataManager()
+2024-06-15 21:27:13,200 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,375 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,201 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,375 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,201 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,376 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
+2024-06-15 21:27:13,203 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,376 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,203 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,377 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,204 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,377 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
+2024-06-15 21:27:13,205 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,377 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,205 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,378 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,206 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,378 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
+2024-06-15 21:27:13,206 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,378 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,207 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,379 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,207 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,379 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
+2024-06-15 21:27:13,208 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,379 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,208 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,380 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,209 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,380 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
+2024-06-15 21:27:13,209 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,380 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,210 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,381 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,210 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,381 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
+2024-06-15 21:27:13,211 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,381 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,211 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:10:31,381 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
+2024-06-15 21:27:13,211 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
 UnityEngine.Object:Instantiate(GameObject, Transform)
 UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
 UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
 
-2024-05-29 00:13:48,004 [ 1] INFO  Unity: OnDestroy NetworkManager.
-2024-05-29 00:13:48,005 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+2024-06-15 21:27:16,058 [ 1] INFO  Unity: Select Char:[7]终于好了[Wizard]
+2024-06-15 21:27:16,498 [ 1] INFO  Unity: UserGameEnterRequest::characterId :6
+2024-06-15 21:27:16,516 [ 1] INFO  Unity: OnGameEnter:Success [None]
+2024-06-15 21:27:16,533 [ 1] INFO  Unity: OnMapCharacterEnter:1
+2024-06-15 21:27:16,535 [ 1] INFO  Unity: LoadLevel: MainCity
+2024-06-15 21:27:16,758 [ 1] INFO  Unity: LevelLoadCompleted:1
+2024-06-15 21:27:59,559 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2024-06-15 21:27:59,560 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
