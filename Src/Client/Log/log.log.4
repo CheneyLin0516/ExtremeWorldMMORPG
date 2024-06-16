@@ -1,95 +1,76 @@
-2024-05-28 23:52:55,265 [ 1] INFO  Unity: LoadingManager start
-2024-05-28 23:53:03,505 [ 1] INFO  Unity: UserLoginRequest::user :user123 psw:1234
-2024-05-28 23:53:03,506 [ 1] INFO  Unity: ConnectToServer() Start 
-2024-05-28 23:53:03,507 [ 1] INFO  Unity: DoConnect
-2024-05-28 23:53:03,508 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2024-05-28 23:53:03,509 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+<<<<<<< HEAD
+<<<<<<< HEAD
+2024-06-15 18:35:29,293 [ 1] INFO  Unity: LoadingManager start
+2024-06-15 18:35:32,461 [ 1] INFO  Unity: DataManager > DataManager()
+2024-06-15 18:35:32,536 [ 1] FATAL Unity: <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>{0
+{1}</format><args>{FormatException: Input string was not in the correct format, System.Int32.Parse (System.String s, NumberStyles style, IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Int32.cs:640)
+System.Int32.Parse (System.String s, IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Int32.cs:208)
+System.Convert.ToInt32 (System.String value, IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Convert.cs:1277)
+System.String.System.IConvertible.ToInt32 (IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/String.cs:2391)
+System.Convert.ToType (System.Object value, System.Type conversionType, IFormatProvider provider, Boolean try_target_to_type) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Convert.cs:2910)
+System.Convert.ChangeType (System.Object value, System.Type conversionType, IFormatProvider provider) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Convert.cs:2511)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType (Newtonsoft.Json.JsonReader reader, System.Object value, System.Globalization.CultureInfo culture, Newtonsoft.Json.Serialization.JsonContract contract, System.Type targetType)
+Rethrow as JsonSerializationException: Error converting value "ID" to type 'System.Int32'. Path '1.ID', line 3, position 9.
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType (Newtonsoft.Json.JsonReader reader, System.Object value, System.Globalization.CultureInfo culture, Newtonsoft.Json.Serialization.JsonContract contract, System.Type targetType)
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary (IDictionary dictionary, Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonDictionaryContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id)
+Rethrow as JsonSerializationException: Could not convert string 'ID' to dictionary key type 'System.Int32'. Create a TypeConverter to convert from the string to the key type object. Path '1.ID', line 3, position 9.
+Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary (IDictionary dictionary, Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonDictionaryContract contract, Newtonsoft.Json.Serialization.JsonProperty containerProperty, System.String id)
+}</args></log4net.Error>
+2024-06-15 18:36:31,667 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2024-06-15 18:36:31,668 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+=======
+2024-05-23 23:00:21,311 [ 1] INFO  Unity: LoadingManager start
+2024-05-23 23:00:40,369 [ 1] INFO  Unity: UserRegisterRequest::user :user123 psw:1234
+2024-05-23 23:00:40,372 [ 1] INFO  Unity: ConnectToServer() Start 
+2024-05-23 23:00:40,375 [ 1] INFO  Unity: DoConnect
+2024-05-23 23:00:40,379 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2024-05-23 23:00:40,382 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
 
-2024-05-28 23:53:03,511 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
-2024-05-28 23:53:03,575 [ 1] INFO  Unity: OnLogin:Success [None]
-2024-05-28 23:53:03,581 [ 1] INFO  Unity: LoadLevel: CharSelect
-2024-05-28 23:53:03,649 [ 1] INFO  Unity: LevelLoadCompleted:1
-2024-05-28 23:53:03,649 [ 1] INFO  Unity: DataManager > DataManager()
-2024-05-28 23:53:03,701 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
+2024-05-23 23:00:40,389 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
+2024-05-23 23:00:47,256 [ 1] INFO  Unity: OnUserRegister:Failed [用户已存在.]
+2024-05-23 23:01:11,055 [ 1] INFO  Unity: UserRegisterRequest::user :user123 psw:1234
+2024-05-23 23:01:11,106 [ 1] INFO  Unity: OnUserRegister:Failed [用户已存在.]
+2024-05-23 23:01:20,970 [ 1] INFO  Unity: ProcessReceive exception:System.Net.Sockets.SocketException: 远程主机强迫关闭了一个现有的连接。
 
-2024-05-28 23:53:03,701 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
+  at System.Net.Sockets.Socket.Receive (System.Byte[] buffer, Int32 offset, Int32 size, SocketFlags flags) [0x00000] in <filename unknown>:0 
+  at Network.NetClient.ProcessRecv () [0x00084] in C:\MMORPG\ExtremeWorldMMORPG\Src\Client\Assets\Scripts\Network\NetClient.cs:340 
 
-2024-05-28 23:53:03,703 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
+2024-05-23 23:01:20,972 [ 1] WARN  Unity: CloseConnection(), errorCode: 1001
+UnityEngine.Debug:LogWarning(Object)
+Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
+Network.NetClient:ProcessRecv() (at Assets/Scripts/Network/NetClient.cs:354)
+Network.NetClient:Update() (at Assets/Scripts/Network/NetClient.cs:434)
 
-2024-05-28 23:53:03,704 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
+2024-05-23 23:01:20,987 [ 1] INFO  Unity: DoConnect
+2024-05-23 23:01:20,988 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2024-05-23 23:01:20,990 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
 
-2024-05-28 23:53:03,704 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
+2024-05-23 23:01:23,022 [ 1] WARN  Unity: CloseConnection(), errorCode: 1005
+UnityEngine.Debug:LogWarning(Object)
+Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
+Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:274)
+Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
+Network.NetClient:KeepConnect() (at Assets/Scripts/Network/NetClient.cs:315)
+Network.NetClient:Update() (at Assets/Scripts/Network/NetClient.cs:432)
 
-2024-05-28 23:53:03,704 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
+2024-05-23 23:01:23,025 [ 1] ERROR Unity: DoConnect SocketException:[10061,ConnectionRefused,10061]System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
 
-2024-05-28 23:53:03,704 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
+  at System.Net.Sockets.Socket+Worker.Connect () [0x00000] in <filename unknown>:0  
+UnityEngine.Debug:LogErrorFormat(String, Object[])
+Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:276)
+Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
+Network.NetClient:KeepConnect() (at Assets/Scripts/Network/NetClient.cs:315)
+Network.NetClient:Update() (at Assets/Scripts/Network/NetClient.cs:432)
 
-2024-05-28 23:53:03,704 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
-
-2024-05-28 23:53:03,705 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
-
-2024-05-28 23:53:03,706 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
-
-2024-05-28 23:53:03,706 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
-
-2024-05-28 23:53:03,706 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
-
-2024-05-28 23:53:03,707 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
-
-2024-05-28 23:53:03,707 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
-
-2024-05-28 23:53:03,707 [ 1] WARN  Unity: The referenced script on this Behaviour (Game Object 'CharInfo') is missing!
-UnityEngine.Object:Instantiate(GameObject, Transform)
-UICharacterSelect:InitCharacterSelect(Boolean) (at Assets/Scripts/UI/UICharacterSelect.cs:105)
-UICharacterSelect:Start() (at Assets/Scripts/UI/UICharacterSelect.cs:38)
-
-2024-05-28 23:53:04,703 [ 1] ERROR Unity: SendMessage  has no receiver!
-UnityEngine.EventSystems.EventSystem:Update()
-
-2024-05-28 23:53:15,311 [ 1] INFO  Unity: OnDestroy NetworkManager.
-2024-05-28 23:53:15,312 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+2024-05-23 23:01:23,242 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2024-05-23 23:01:23,243 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+>>>>>>> parent of 498d36e (Version 1.2.6)
+=======
+2024-05-19 15:18:06,342 [ 1] INFO  Unity: LoadingManager start
+2024-05-19 15:18:10,818 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2024-05-19 15:18:10,821 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+>>>>>>> parent of c840d88 (Version1.2.5)
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
