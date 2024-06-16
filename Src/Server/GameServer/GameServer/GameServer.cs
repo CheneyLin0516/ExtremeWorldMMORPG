@@ -20,6 +20,7 @@ namespace GameServer
         Thread thread;
         bool running = false;
         NetService network;
+
         public bool Init()
         {
             network = new NetService();
@@ -27,6 +28,8 @@ namespace GameServer
             //HelloWorldService.Instance.Init();//初始化
             DBService.Instance.Init();
             UserService.Instance.Init();
+            DataManager.Instance.Load();
+            MapManager.Instance.Init();
             //var a = DBService.Instance.Enities.Characters.Where(s => s.TID ==1);
             //Console.WriteLine("{0}",a.FirstOrDefault<TCharacter>().Name);
             DataManager.Instance.Load();
