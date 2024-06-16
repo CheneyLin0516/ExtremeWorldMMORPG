@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2024-06-15 19:42:27,909 [ 1] INFO  Unity: LoadingManager start
 2024-06-15 19:42:30,971 [ 1] INFO  Unity: DataManager > DataManager()
 2024-06-15 19:42:31,046 [ 1] FATAL Unity: <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>{0
@@ -16,6 +17,19 @@ Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary (I
 }</args></log4net.Error>
 2024-06-15 19:42:53,521 [ 1] INFO  Unity: OnDestroy NetworkManager.
 2024-06-15 19:42:53,521 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+=======
+2024-05-25 15:50:00,128 [ 1] INFO  Unity: LoadingManager start
+2024-05-25 15:50:10,900 [ 1] INFO  Unity: UserLoginRequest::user :user123 psw:1234
+2024-05-25 15:50:10,901 [ 1] INFO  Unity: ConnectToServer() Start 
+2024-05-25 15:50:10,902 [ 1] INFO  Unity: DoConnect
+2024-05-25 15:50:10,904 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2024-05-25 15:50:10,905 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+
+2024-05-25 15:50:10,907 [ 1] INFO  Unity: LoadingMesager::OnGameServerConnect :0 reason:Success
+2024-05-25 15:50:13,852 [ 1] INFO  Unity: OnUserLogin:Success [None]
+2024-05-25 15:50:19,537 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2024-05-25 15:50:19,537 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+>>>>>>> parent of 498d36e (Version 1.2.6)
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)

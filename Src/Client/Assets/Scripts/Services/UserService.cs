@@ -160,7 +160,7 @@ namespace Services
         //把用户登录成功的消息发送给关注的人，在这里是OnLogin需要关注
         void OnUserLogin(object sender, UserLoginResponse response)//object sender是一个在 C# 事件处理程序中表示触发事件的对象。比如点击确认按钮
         {
-            Debug.LogFormat("OnLogin:{0} [{1}]", response.Result, response.Errormsg);
+            Debug.LogFormat("OnUserLogin:{0} [{1}]", response.Result, response.Errormsg);
 
             if(response.Result == Result.Success)
             {
@@ -228,7 +228,7 @@ namespace Services
             }
         }
 
-        void OnUserCreateCharacter(object sender, UserCreateCharacterResponse response)//sender 参数表示触发事件的对象,即服务器是否发送response
+        void OnUserCreateCharacter(object sender, UserCreateCharacterResponse response)
         {
             Debug.LogFormat("OnUserCreateCharacter:{0} [{1}]", response.Result, response.Errormsg);
 
@@ -237,12 +237,12 @@ namespace Services
                 Models.User.Instance.Info.Player.Characters.Clear();
                 Models.User.Instance.Info.Player.Characters.AddRange(response.Characters);
             }
-            if(this.OnCharacterCreate != null)//判断这个消息是否有人订阅，如果有人订阅，做一个消息的分发，在UICharacterSelect面板进行订阅
+            if(this.OnCharacterCreate != null)
             {
                 this.OnCharacterCreate(response.Result, response.Errormsg);
             }
         }
-        //接收完消息后要在UserService方法里注册来订阅消息和取消
+
 
         public void SendGameEnter(int characterIdx)//发送进入游戏的请求，需要知道当前选择的哪个角色，所以发送角色索引idx
                                                     //因为登录的时候，服务器会有一个角色列表填充给客户端，所以客户端的角色顺序和服务器是一致的
